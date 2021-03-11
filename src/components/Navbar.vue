@@ -1,13 +1,13 @@
 <template>
   <nav>
     <div class="navbar">
-      <img class="nada" src="./../assets/nada.png" />
+      <img class="nada" src="./../assets/images/nada.png" />
       <div class="input">
         <div></div>
         <input type="text" placeholder="Procurar" />
       </div>
       <button class="btn" @click="autoHide">Filtrar</button>
-      <img class="logo" src="./../assets/onit-logo.png" />
+      <img class="logo" src="./../assets/images/onit-logo.png" />
     </div>
     <div class="filtros" :style="''">
       <div class="onit">
