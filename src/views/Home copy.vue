@@ -13,7 +13,7 @@
         <h1>Bem Vindo ao ONIT</h1>
         <div class="well-div">
           <div class="img-container">
-            <img src="../assets/images/explore.png" />
+            <img src="../assets/images/explore.png" class="imagem" />
           </div>
           <div>
             <p class="subtitulo">Talks e Eventos</p>
@@ -22,7 +22,7 @@
         </div>
         <div class="well-div">
           <div class="img-container">
-            <img src="../assets/images/card-favorite.png" />
+            <img src="../assets/images/card-favorite.png" class="imagem" />
           </div>
           <div>
             <p class="subtitulo">Junta te a nossa Comunidade</p>
@@ -33,7 +33,7 @@
         </div>
         <div class="well-div">
           <div class="img-container">
-            <img src="../assets/images/interview.png" />
+            <img src="../assets/images/interview.png" class="imagem" />
           </div>
           <div>
             <p class="subtitulo">Tenha acesso a Projectos Interessantes</p>
@@ -63,21 +63,12 @@
     </div>
 
     <div id="cards">
-      <card
-        title="Mentoria"
-        body="Acede a Mentoria de experts que vão guiar e fazer o acompanhamento constante"
-        icon="../assets/images/node.svg"
-      />
-      <card
-        title="Cursos Pagos"
-        body="Cursos pagos de programação, Front End, DevOps, Mobile, UX Design e muito Mais"
-        icon="../assets/images/msg.svg"
-      />
-      <card
-        title="Projectos"
-        body="Uma lista de projectos interessantes para a melhoria das capacidades individuais"
-        icon="../assets/images/chat.svg"
-      />
+      <card title="Mentoria" body="Acede a Mentoria de experts que vão guiar e fazer o acompanhamento constante" 
+      icon="../assets/images/node.svg"/>
+      <card title="Cursos Pagos" body="Cursos pagos de programação, Front End, DevOps, Mobile, UX Design e muito Mais"
+       icon="../assets/images/msg.svg"/>
+      <card title="Projectos" body="Uma lista de projectos interessantes para a melhoria das capacidades individuais"
+       icon="../assets/images/chat.svg"/>
     </div>
 
     <div id="eventos">
@@ -153,22 +144,22 @@
           eventos e mais oportunidades na sua caixa de entrada para se inscrever
         </p>
         <div id="subscribe-input">
-          <FontAwesomeIcon icon="envelope" class="fa-2x"/>
+          <FontAwesomeIcon icon="envelope" />
           <input type="text" placeholder="Escreve o seu Email" />
           <button>Subscrever</button>
         </div>
       </div>
     </div>
 
-    <Footer />
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Evento from "../components/Evento";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import Footer from "../components/Footer";
-import Card from "../components/Card";
+import Footer from '../components/Footer';
+import Card from '../components/Card';
 export default {
   components: {
     Evento,
@@ -192,36 +183,33 @@ export default {
 }
 
 .links {
-  font-family: "Circular Std";
   margin-right: 4.7rem;
   margin-top: 4.6rem;
   text-decoration: none;
-  font-size: 1.6rem;
-  line-height: 2.8rem;
+  font-size: 16px;
+  line-height: 28px;
   text-align: right;
   color: #1d293f;
 }
 
 .links:first-child {
-  font-family: "Circular Std";
   font-weight: bold;
 }
 
 .links:last-child {
-  font-family: "Circular Std";
-  margin-top: 3.6rem;
+  margin-top: 36px;
   font-weight: 500;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 13px;
+  line-height: 20px;
   /* identical to box height, or 154% */
 
   text-align: center;
 
   color: #e9f7fe;
   background: #0f53fa;
-  border-radius: 0.5rem;
-  height: 4.5rem;
-  width: 18.9rem;
+  border-radius: 5px;
+  height: 45px;
+  width: 189px;
   border: none;
 }
 
@@ -231,69 +219,64 @@ export default {
 }
 
 #wellcome div {
-  margin-right: 5.5rem;
+  margin-right: 55px;
 }
 
 #wellcome div h1 {
-  font-family: "Circular Std";
-  margin-bottom: 5.5rem;
+  margin-bottom: 55px;
   font-weight: bold;
-  font-size: 5.8rem;
-  line-height: 6.4rem;
-  letter-spacing: -0.1rem;
+  font-size: 58px;
+  line-height: 64px;
+  letter-spacing: -1px;
   color: #1d293f;
 }
 
-/*propriedades da imagens*/
-#img {
-  width: 54.6rem;
-  height: 63.3rem;
+.imagem {
+  width: 36px;
+  height: 36px;
 }
 .img-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 8.3rem;
-  height: 8.3rem;
+  width: 83px;
+  height: 83px;
   box-sizing: border-box;
-  border: 0.1rem solid #e2e4e8;
+  border: 1px solid #e2e4e8;
   box-sizing: border-box;
-  border-radius: 1rem;
-  margin-right: 3.1rem;
+  border-radius: 10px;
+  margin-right: 31px;
 }
 
 .subtitulo {
-  font-family: "Circular Std";
   font-weight: 700;
-  font-size: 2.1rem;
-  line-height: 3.4rem;
+  font-size: 21px;
+  line-height: 34px;
   color: #1d293f;
 }
 
 .well-div {
   display: flex;
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
 .well-div {
-  font-family: "Circular Std";
   font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 2.8rem;
+  font-size: 16px;
+  line-height: 28px;
   color: #7c8087;
 }
 
 #icc {
   display: flex;
   justify-content: center;
-  margin-top: 21.7rem;
+  margin-top: 217px;
 }
 
 #icc p {
-  font-family: "Circular Std";
   font-weight: bold;
-  font-size: 4.8rem;
-  line-height: 5.6rem;
+  font-size: 48px;
+  line-height: 56px;
   text-align: center;
   letter-spacing: -0.827586px;
   color: #1d293f;
@@ -303,11 +286,10 @@ export default {
   display: flex;
   text-align: center;
   flex-direction: column;
-  margin-top: 1.4rem;
-  font-family: "Circular Std";
+  margin-top: 14px;
   font-weight: normal;
-  font-size: 1.8rem;
-  line-height: 3.2rem;
+  font-size: 18px;
+  line-height: 32px;
   /* or 178% */
 
   text-align: center;
@@ -317,35 +299,33 @@ export default {
 
 .slash {
   border: solid 2px#1d293f;
-  margin: 0 1rem;
-  height: 2.5rem;
-  margin-top: 1.5rem;
+  margin: 0 10px;
+  height: 25px;
+  margin-top: 15px;
 }
 
 #ec {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 7.3rem;
+  margin-bottom: 73px;
 }
 
 #ec h2 {
-  font-family: "Circular Std";
   font-weight: 500;
-  font-size: 5.8rem;
-  line-height: 6.4rem;
+  font-size: 58px;
+  line-height: 64px;
   /* or 110% */
 
-  letter-spacing: -0.1rem;
+  letter-spacing: -1px;
 
   color: #1d293f;
 }
 
 #ec button {
-  font-family: "Circular Std";
-  width: 19.3rem;
-  height: 6.5rem;
-  font-size: 1.6rem;
-  line-height: 2rem;
+  width: 193px;
+  height: 65px;
+  font-size: 16px;
+  line-height: 20px;
   text-align: center;
   background: #22b0fc;
   color: white;
@@ -354,8 +334,8 @@ export default {
 
 #eventos {
   background: #f7f8fa;
-  margin-top: 10.7rem;
-  padding: 12.5rem;
+  margin-top: 107px;
+  padding: 245px;
 }
 
 #evento-card {
@@ -371,77 +351,76 @@ export default {
 }
 
 #subscriber img {
-  width: 63.9rem;
-  height: 68.8rem;
+  width: 639px;
+  height: 688px;
 }
 
 #subscriber div {
-  width: 68rem;
+  width: 680px;
 }
 
 #subscriber div p:first-child {
-  font-family: "Circular Std";
-  font-size: 1.6rem;
-  line-height: 2rem;
+  font-size: 16px;
+  line-height: 20px;
   color: #f77321;
 }
 
 #subscriber div h2 {
-  font-family: "Circular Std";
+  font-family: Circular Std;
   font-style: normal;
   font-weight: 500;
-  font-size: 5.8rem;
-  line-height: 6.4rem;
+  font-size: 58px;
+  line-height: 64px;
   /* or 110% */
 
-  letter-spacing: -0.1rem;
+  letter-spacing: -1px;
   color: #1d293f;
 }
 
 #subscriber div h2 + p {
-  font-family: "Circular Std";
+  font-family: CircularStd;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.8rem;
-  line-height: 3.2rem;
+  font-size: 18px;
+  line-height: 32px;
   /* or 178% */
 
   color: #7c8087;
 }
 
 #subscribe-input {
-  height: 10.7rem;
+  height: 107px;
 }
 
 #subscribe-input input {
-  height: 10.7rem;
+  height: 107px;
   border: none;
   width: 25rem;
-  margin-left: 1rem;
-  font-family: "Circular Std";
+
+  font-family: Circular Std;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 2rem;
+  font-size: 16px;
+  line-height: 20px;
 
   color: #8c97ac;
 }
 
 #subscribe-input button {
-  width: 16rem;
-  height: 10.7rem;
+  width: 160px;
+  height: 107px;
   color: white;
   border: none;
   background: #22b0fc;
-  margin-top: 6.3rem;
+  margin-top: 63px;
 }
 
 #subscribe-input svg {
   color: #7c8087;
-  margin-right: 0.5rem;
+  margin-right: 5px;
 }
 
-#cards {
+#cards{
   display: flex;
   justify-content: center;
 }
