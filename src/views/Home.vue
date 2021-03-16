@@ -1,7 +1,9 @@
 <template>
   <div id="registro-model" class="closed-modal">
+    <button @click="closeModel" id="closeModel">
+      <FontAwesomeIcon icon="window-close" />
+    </button>
     <cadastro />
-    <button @click="closeModel">Close</button>
   </div>
   <div id="home-page">
     <nav id="navbar">
@@ -195,14 +197,18 @@ export default {
     closeModel: function () {
       document.getElementById("home-page").classList.remove("open-modal");
       document.getElementById("registro-model").classList.remove("model");
-      document.getElementById("registro-model").classList.add("closed-modaljnmnik");
-      console.log("Aqui chega");
+      document.getElementById("registro-model").classList.add("closed-modal");
     },
   },
 };
 </script>
 
 <style lang="css" scoped>
+#closeModel {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
 .closed-modal {
   display: none;
 }
@@ -215,7 +221,6 @@ export default {
   z-index: 1;
   left: calc(50vw - 41rem);
   /*top: calc(50vh - 7.1rem);*/
-
 }
 
 #navbar {
