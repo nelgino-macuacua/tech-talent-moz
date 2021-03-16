@@ -4,7 +4,7 @@
       <img class="nada" src="./../assets/images/nada.png" />
       <div class="input">
         <div></div>
-        <input type="text" placeholder="Procurar" />
+        <input type="text" placeholder="Procurar" @keyup="onSearch(pesquisa)" v-model="pesquisa.search" />
       </div>
       <button class="btn" @click="autoHide">Filtrar</button>
       <img class="logo" src="./../assets/images/onit-logo.png" />
@@ -16,13 +16,15 @@
         <p id="ttm">Tech Talent Moz</p>
       </div>
       <div class="dropbox-container" :style="hide">
-        <select class="dropbox">
-          <option>Disponibilidade</option>
+        <select class="dropbox" @change="onSearch(pesquisa)" v-model="pesquisa.disponibilidade">
+          <option value="">Disponibilidade</option>
+          <option value="full-time">Full-time</option>
+          <option value="part-time">Part-Time</option>
         </select>
-        <select class="dropbox">
-          <option>Taxa por Hora</option>
+        <select class="dropbox" @change="onSearch(pesquisa)" v-model="pesquisa.taxa">
+          <option value="">Taxa por Hora</option>
         </select>
-        <select class="dropbox">
+        <select class="dropbox" @change="onSearch(pesquisa)">
           <option>Skills</option>
         </select>
       </div>
@@ -33,20 +35,30 @@
 
 <script>
 export default {
-    data(){
-        return {
-            hide: "display: none"
-        }
+  props: {
+    onSearch: Function,
+  },
+  data() {
+    return {
+      hide: "display: none",
+      pesquisa: {
+        search : "",
+        disponiblidade: "Full-time",
+        taxaMin: 0,
+        taxaMax:0,
+      }
+    };
+  },
+  methods: {
+    autoHide: function () {
+      if (this.hide === "display: none") {
+        this.hide = "";
+      } else {
+        this.hide = "display: none";
+      }
     },
-    methods: {
-        autoHide : function(){
-            if(this.hide==="display: none"){
-                this.hide = "";
-            }else{
-                this.hide="display: none";
-            }
-        }
-    }
+
+  },
 };
 </script>
 
