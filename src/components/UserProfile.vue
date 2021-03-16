@@ -11,7 +11,7 @@
       <div class="divs">
         <div>
           <p class="skill">
-            Skills:<span class="skill-at">{{skills}}</span>
+            Skills:<span class="skill-at">{{getSkills(skills)}}</span>
           </p>
         </div>
         <p class="skill">Taxa por Hora:<span class="skill-at">MZN {{taxa}}</span></p>
@@ -32,13 +32,23 @@ export default {
   props:{
     nome: String,
     titulo: String,
-    skills : String,
+    skills : [Object],
     disponibilidade: String,
     portifolio: String,
     linkedin: String,
     github: String,
     taxa: Number,
     imagem: String,
+  },
+  methods:{
+    getSkills: function(arrayOfSkills){
+
+      let aux = [];
+      arrayOfSkills.map((skill)=>{
+        aux.push(skill.skill);
+      });
+      return aux.toString(); //converte de array para string
+    }
   }
 };
 </script>

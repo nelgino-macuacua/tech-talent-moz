@@ -1,11 +1,17 @@
 <template>
-  <div>
+  <div id="registro-model" class="closed-modal">
+    <cadastro />
+    <button @click="closeModel">Close</button>
+  </div>
+  <div id="home-page">
     <nav id="navbar">
       <img src="../assets/images/onit-logo.png" />
       <div>
         <router-link to="/" class="links">Home</router-link>
         <router-link to="/talentmoz" class="links">Tech Talent Moz</router-link>
-        <button class="links">Cadastrar-se para o TIM</button>
+        <button @click="openModal" class="links">
+          Cadastrar-se para o TIM
+        </button>
       </div>
     </nav>
     <div id="wellcome">
@@ -22,7 +28,7 @@
         </div>
         <div class="well-div">
           <div class="img-container">
-            <img src="../assets/images/card-favorite.png" />
+            <img src="../assets/images/interview.png" />
           </div>
           <div>
             <p class="subtitulo">Junta te a nossa Comunidade</p>
@@ -33,7 +39,7 @@
         </div>
         <div class="well-div">
           <div class="img-container">
-            <img src="../assets/images/interview.png" />
+            <img src="../assets/images/card-favorite.png" />
           </div>
           <div>
             <p class="subtitulo">Tenha acesso a Projectos Interessantes</p>
@@ -153,7 +159,7 @@
           eventos e mais oportunidades na sua caixa de entrada para se inscrever
         </p>
         <div id="subscribe-input">
-          <FontAwesomeIcon icon="envelope" class="fa-2x"/>
+          <FontAwesomeIcon icon="envelope" class="fa-2x" />
           <input type="text" placeholder="Escreve o seu Email" />
           <button>Subscrever</button>
         </div>
@@ -169,17 +175,49 @@ import Evento from "../components/Evento";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
+import Cadastro from "../components/Cadastro";
 export default {
   components: {
     Evento,
     FontAwesomeIcon,
     Footer,
     Card,
+    Cadastro,
+  },
+  methods: {
+    openModal: function () {
+      document.getElementById("home-page").classList.add("open-modal");
+      document.getElementById("registro-model").classList.add("model");
+      document
+        .getElementById("registro-model")
+        .classList.remove("closed-modal");
+    },
+    closeModel: function () {
+      document.getElementById("home-page").classList.remove("open-modal");
+      document.getElementById("registro-model").classList.remove("model");
+      document.getElementById("registro-model").classList.add("closed-modaljnmnik");
+      console.log("Aqui chega");
+    },
   },
 };
 </script>
 
 <style lang="css" scoped>
+.closed-modal {
+  display: none;
+}
+
+.open-modal {
+  filter: blur(10px);
+}
+.model {
+  position: fixed;
+  z-index: 1;
+  left: calc(50vw - 41rem);
+  /*top: calc(50vh - 7.1rem);*/
+
+}
+
 #navbar {
   display: flex;
   justify-content: space-between;
