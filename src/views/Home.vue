@@ -219,8 +219,8 @@ export default {
 .model {
   position: fixed;
   z-index: 1;
-  left: calc(50vw - 41rem);
-  /*top: calc(50vh - 7.1rem);*/
+  left: calc(50vw - 34rem);
+  top: calc(8vh - 6.2rem);
 }
 
 #navbar {
@@ -427,6 +427,7 @@ export default {
   font-size: 1.6rem;
   line-height: 2rem;
   color: #f77321;
+  margin-bottom: 4rem;
 }
 
 #subscriber div h2 {
@@ -435,6 +436,7 @@ export default {
   font-weight: 500;
   font-size: 5.8rem;
   line-height: 6.4rem;
+  margin-bottom: 4rem;
   /* or 110% */
 
   letter-spacing: -0.1rem;
