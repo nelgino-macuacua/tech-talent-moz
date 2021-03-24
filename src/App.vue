@@ -1,8 +1,4 @@
 <template>
-  <!--<div>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>-->
   <router-view />
 </template>
 
@@ -18,6 +14,14 @@
         url('../src/assets/fonts/CircularStd-Black.woff') format('woff');
 }
 
+button,a{
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+button:hover,a:hover{
+  filter:brightness(0.9); /*escurece 10%*/
+}
 
 :root{
   font-size: 8px;

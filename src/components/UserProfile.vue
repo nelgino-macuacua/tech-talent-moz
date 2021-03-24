@@ -3,15 +3,15 @@
     <img :src="imagem" class="pic" />
     <div class="user-details">
       <div class="prof-time">
-        <p class="user-prof">{{titulo}}</p>
+        <p class="user-prof">{{getTitulos(titulos)}}</p>
         <div class="dot"></div>
-        <p class="user-time">{{disponibilidade}}</p>
+        <p class="user-time">{{disponibilidade.toUpperCase()}}</p>
       </div>
-      <p class="user-name">{{nome}}</p>
+      <p class="user-name">{{nome.toUpperCase()}}</p>
       <div class="divs">
         <div>
           <p class="skill">
-            Skills:<span class="skill-at">{{skills}}</span>
+            Skills:<span class="skill-at">{{getSkills(skills)}}</span>
           </p>
         </div>
         <p class="skill">Taxa por Hora:<span class="skill-at">MZN {{taxa}}</span></p>
@@ -31,15 +31,45 @@
 export default {
   props:{
     nome: String,
-    titulo: String,
-    skills : String,
+    titulos: [Object],
+    skills : [Object],
     disponibilidade: String,
     portifolio: String,
     linkedin: String,
     github: String,
     taxa: Number,
     imagem: String,
+  },
+  methods:{
+    getSkills: function(arrayOfSkills){
+      let aux = [];
+      arrayOfSkills.map((skill, index)=>{
+        if(index!=0){
+          aux.push(" "+skill.skill);
+        }else{
+          aux.push(skill.skill);
+        }
+      });
+      const titulos = aux.toString().toUpperCase();
+      return titulos.length<=30?titulos:titulos.slice(0,30)+"...";
+    },
+    getTitulos: function(arrayOfTitulos){
+      let aux = [];
+      arrayOfTitulos.map((titulo, index)=>{
+        
+        if(index!=0){
+          aux.push(" " + titulo.titulo);
+        }else{
+          aux.push(titulo.titulo);
+        }
+      });
+      const titulos = aux.toString().toUpperCase();
+      return titulos.length<=20?titulos:titulos.slice(0,20)+"...";
+    }
   }
+
+
+
 };
 </script>
 
@@ -98,6 +128,7 @@ p {
   font-size: 12px;
   line-height: 16px;
   color: #b8c4cb;
+  width: 20ch;
 }
 
 .user-time {
